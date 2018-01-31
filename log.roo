@@ -1,0 +1,45 @@
+// Spring Roo 2.0.0.RC2 [rev 76d128f] log opened at 2018-01-31 15:32:25
+project setup --topLevelPackage vanousova --projectName "pro" --java 8 --multimodule STANDARD
+// Spring Roo 2.0.0.RC2 [rev 76d128f] log closed at 2018-01-31 15:32:26
+// Spring Roo 2.0.0.RC2 [rev 76d128f] log opened at 2018-01-31 15:32:29
+settings add --name spring.roo.jpa.require.schema-object-name --value false --force
+jpa setup --provider HIBERNATE --database ORACLE --databaseName test --userName projekt_DORDB_test --password projekt_DORDB_test
+module focus --moduleName model
+entity jpa --class ~.Mistnost
+field string --fieldName nazev
+field number --fieldName kapacita --type int
+field number --fieldName id_mist --type long
+repository jpa --all 
+// [failed] finder add --entity model:~.Mistnost --name findBynazev
+finder add --entity model:~.Mistnost --name findByNazev
+service --all
+web mvc setup
+web mvc view setup --type THYMELEAF
+// [failed] web mvc templates setup --type THYMELEAF
+web mvc controller --all 
+web mvc controller --all --responseType THYMELEAF 
+web mvc finder --all --responseType THYMELEAF 
+focus --class vanousova.ProApplication
+web mvc finder --all --responseType THYMELEAF 
+// Spring Roo 2.0.0.RC2 [rev 76d128f] log closed at 2018-01-31 16:04:45
+// Spring Roo 2.0.0.RC2 [rev 76d128f] log opened at 2018-01-31 18:20:44
+web mvc finder --entity model:~.Mistnost 
+// Spring Roo 2.0.0.RC2 [rev 76d128f] log closed at 2018-01-31 18:51:45
+// Spring Roo 2.0.0.RC2 [rev 76d128f] log opened at 2018-01-31 19:52:17
+entity jpa --class model:~.Zakaznik --identifierColumn id_zaka
+focus --class ~.Zakaznik
+field string --fieldName nazev
+field string --fieldName login
+enum type --class model:~.platce
+focus --class ~.Zakaznik
+focus --class ~.Platce
+enum constant --name ANO --class ~.Platce
+enum constant --name NE --class ~.Platce
+focus --class ~.Zakaznik
+field enum --fieldName platce_DPH --type ~.Platce --enumType STRING 
+repository jpa --entity ~.Zakaznik --interface repository:~.Zakaznik
+// [failed] finder add --entity ~.Zakaznik --name findBynazev
+finder add --entity ~.Zakaznik --name findByNazev
+service --all
+web mvc controller --entity ~.Zakaznik --responseType THYMELEAF 
+web mvc finder --entity ~.Zakaznik --responseType THYMELEAF 
