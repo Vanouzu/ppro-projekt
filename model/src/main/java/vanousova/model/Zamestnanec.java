@@ -28,6 +28,7 @@ public class Zamestnanec {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_zam")
     private Long id;
 
     /**
