@@ -135,13 +135,13 @@ privileged aspect MistnostsCollectionJsonController_Roo_JSON {
     /**
      * TODO Auto-generated method documentation
      * 
-     * @param id_mists
+     * @param ids
      * @return ResponseEntity
      */
-    @DeleteMapping(value = "/batch/{id_mists}", name = "deleteBatch")
-    public ResponseEntity<?> MistnostsCollectionJsonController.deleteBatch(@PathVariable("id_mists") Collection<Long> id_mists) {
+    @DeleteMapping(value = "/batch/{ids}", name = "deleteBatch")
+    public ResponseEntity<?> MistnostsCollectionJsonController.deleteBatch(@PathVariable("ids") Collection<Long> ids) {
         
-        getMistnostService().delete(id_mists);
+        getMistnostService().delete(ids);
         
         return ResponseEntity.ok().build();
     }

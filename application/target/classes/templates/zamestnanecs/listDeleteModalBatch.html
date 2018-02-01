@@ -1,0 +1,24 @@
+<!--TABLE-->
+<div class="table-responsive" id="containerFields" data-th-fragment="zamestnanec-entityModalConfirmBody" data-th-with="collectionLink=${@linkBuilder.of('ZamestnanecsCollectionThymeleafController')},itemLink=${@linkBuilder.of('ZamestnanecsItemThymeleafController')}">
+    <table id="zamestnanec-entity-table-items-to-remove-batch" data-data-load-url="${collectionLink.to('datatablesByIdsIn')}">
+      <thead>
+        <tr>
+          <th data-data="jmeno" data-th-text="#{label_zamestnanec_jmeno}">jmeno</th>
+          <th data-data="prijmeni" data-th-text="#{label_zamestnanec_prijmeni}">prijmeni</th>
+          <th data-data="login" data-th-text="#{label_zamestnanec_login}">login</th>
+          <th data-data="hodinova_sazba" data-th-text="#{label_zamestnanec_hodinova_sazba}">hodinova_sazba</th>
+          <th data-data="pozice" data-th-text="#{label_zamestnanec_pozice}">pozice</th>
+        </tr>
+      </thead>
+      <tbody data-th-remove="all">
+        <tr>
+          <td>jmeno</td>
+          <td>prijmeni</td>
+          <td>login</td>
+          <td>hodinova_sazba</td>
+          <td>pozice</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<!-- /TABLE -->

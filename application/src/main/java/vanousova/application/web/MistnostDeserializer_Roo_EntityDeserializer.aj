@@ -67,8 +67,8 @@ privileged aspect MistnostDeserializer_Roo_EntityDeserializer {
      */
     public Mistnost MistnostDeserializer.deserializeObject(JsonParser jsonParser, DeserializationContext context, ObjectCodec codec, JsonNode tree) throws IOException {
         String idText = tree.asText();
-        Long id_mist = conversionService.convert(idText, Long.class);
-        Mistnost mistnost = mistnostService.findOne(id_mist);
+        Long id = conversionService.convert(idText, Long.class);
+        Mistnost mistnost = mistnostService.findOne(id);
         if (mistnost == null) {
             throw new NotFoundException("Mistnost not found");
         }

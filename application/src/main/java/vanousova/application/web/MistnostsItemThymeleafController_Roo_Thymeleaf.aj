@@ -132,22 +132,22 @@ privileged aspect MistnostsItemThymeleafController_Roo_Thymeleaf {
     /**
      * TODO Auto-generated method documentation
      * 
-     * @param id_mist
+     * @param id
      * @param locale
      * @param method
      * @return Mistnost
      */
     @ModelAttribute
-    public Mistnost MistnostsItemThymeleafController.getMistnost(@PathVariable("mistnost") Long id_mist, Locale locale, HttpMethod method) {
+    public Mistnost MistnostsItemThymeleafController.getMistnost(@PathVariable("mistnost") Long id, Locale locale, HttpMethod method) {
         Mistnost mistnost = null;
         if (HttpMethod.PUT.equals(method)) {
-            mistnost = mistnostService.findOneForUpdate(id_mist);
+            mistnost = mistnostService.findOneForUpdate(id);
         } else {
-            mistnost = mistnostService.findOne(id_mist);
+            mistnost = mistnostService.findOne(id);
         }
         
         if (mistnost == null) {
-            String message = messageSource.getMessage("error_NotFound", new Object[] {"Mistnost", id_mist}, "The record couldn't be found", locale);
+            String message = messageSource.getMessage("error_NotFound", new Object[] {"Mistnost", id}, "The record couldn't be found", locale);
             throw new NotFoundException(message);
         }
         return mistnost;
@@ -186,7 +186,7 @@ privileged aspect MistnostsItemThymeleafController_Roo_Thymeleaf {
      */
     @InitBinder("mistnost")
     public void MistnostsItemThymeleafController.initMistnostBinder(WebDataBinder dataBinder) {
-        dataBinder.setDisallowedFields("id_mist");
+        dataBinder.setDisallowedFields("id");
     }
     
     /**

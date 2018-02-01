@@ -43,14 +43,14 @@ privileged aspect MistnostsItemJsonController_Roo_JSON {
     /**
      * TODO Auto-generated method documentation
      * 
-     * @param id_mist
+     * @param id
      * @return Mistnost
      */
     @ModelAttribute
-    public Mistnost MistnostsItemJsonController.getMistnost(@PathVariable("mistnost") Long id_mist) {
-        Mistnost mistnost = mistnostService.findOne(id_mist);
+    public Mistnost MistnostsItemJsonController.getMistnost(@PathVariable("mistnost") Long id) {
+        Mistnost mistnost = mistnostService.findOne(id);
         if (mistnost == null) {
-            throw new NotFoundException(String.format("Mistnost with identifier '%s' not found",id_mist));
+            throw new NotFoundException(String.format("Mistnost with identifier '%s' not found",id));
         }
         return mistnost;
     }

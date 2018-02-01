@@ -18,10 +18,10 @@ privileged aspect MistnostService_Roo_Service {
     /**
      * TODO Auto-generated method documentation
      * 
-     * @param id_mist
+     * @param id
      * @return Mistnost
      */
-    public abstract Mistnost MistnostService.findOne(Long id_mist);
+    public abstract Mistnost MistnostService.findOne(Long id);
     
     /**
      * TODO Auto-generated method documentation
@@ -56,10 +56,10 @@ privileged aspect MistnostService_Roo_Service {
     /**
      * TODO Auto-generated method documentation
      * 
-     * @param id_mist
+     * @param id
      * @return Mistnost
      */
-    public abstract Mistnost MistnostService.findOneForUpdate(Long id_mist);
+    public abstract Mistnost MistnostService.findOneForUpdate(Long id);
     
     /**
      * TODO Auto-generated method documentation

@@ -247,7 +247,7 @@ privileged aspect MistnostsCollectionThymeleafController_Roo_Thymeleaf {
     @ResponseBody
     public ResponseEntity<Select2DataSupport<Mistnost>> MistnostsCollectionThymeleafController.select2(GlobalSearch search, Pageable pageable, Locale locale) {
         Page<Mistnost> mistnosts = getMistnostService().findAll(search, pageable);
-        String idExpression = "#{id_mist}";
+        String idExpression = "#{id}";
         Select2DataSupport<Mistnost> select2Data = new Select2DataWithConversion<Mistnost>(mistnosts, idExpression, getConversionService());
         return ResponseEntity.ok(select2Data);
     }
@@ -259,7 +259,7 @@ privileged aspect MistnostsCollectionThymeleafController_Roo_Thymeleaf {
      */
     @InitBinder("mistnost")
     public void MistnostsCollectionThymeleafController.initMistnostBinder(WebDataBinder dataBinder) {
-        dataBinder.setDisallowedFields("id_mist");
+        dataBinder.setDisallowedFields("id");
     }
     
     /**
@@ -317,14 +317,14 @@ privileged aspect MistnostsCollectionThymeleafController_Roo_Thymeleaf {
     /**
      * TODO Auto-generated method documentation
      * 
-     * @param id_mists
+     * @param ids
      * @return ResponseEntity
      */
-    @DeleteMapping(value = "/batch/{id_mists}", name = "deleteBatch")
+    @DeleteMapping(value = "/batch/{ids}", name = "deleteBatch")
     @ResponseBody
-    public ResponseEntity<?> MistnostsCollectionThymeleafController.deleteBatch(@PathVariable("id_mists") Collection<Long> id_mists) {
+    public ResponseEntity<?> MistnostsCollectionThymeleafController.deleteBatch(@PathVariable("ids") Collection<Long> ids) {
         
-        getMistnostService().delete(id_mists);
+        getMistnostService().delete(ids);
         
         return ResponseEntity.ok().build();
     }
@@ -484,7 +484,7 @@ privileged aspect MistnostsCollectionThymeleafController_Roo_Thymeleaf {
     public void MistnostsCollectionThymeleafController.addColumnToReportBuilder(String columnName, FastReportBuilder builder, Locale locale, String fileName) {
         try {
         if (columnName.equals("id")) {
-            builder.addColumn(getMessageSource().getMessage("label_mistnost_id", null, "Id", locale), "id", Long.class.getName(), 100);
+            builder.addColumn(getMessageSource().getMessage("label_mistnost_id", null, "Id", locale), "id", Long.class.getName(), 50);
         }
         else if (columnName.equals("version")) {
             builder.addColumn(getMessageSource().getMessage("label_mistnost_version", null, "Version", locale), "version", Integer.class.getName(), 100);

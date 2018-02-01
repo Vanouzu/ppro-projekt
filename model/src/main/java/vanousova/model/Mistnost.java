@@ -51,6 +51,8 @@ public class Mistnost {
     @NumberFormat
     private int kapacita;
 
+	
+
 
 
 }

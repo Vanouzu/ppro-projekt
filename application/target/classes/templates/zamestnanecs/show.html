@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{layouts/default-list-layout}">
+  <head id="head">
+
+    <title data-th-text="|#{label_show_entity(#{label_zamestnanec})}|">Show Zamestnanec - Spring Roo application</title>
+
+  </head>
+
+  <body id="body">
+
+    <header role="banner">
+      <!-- Content replaced by layout of the page displayed -->
+    </header>
+
+    <!--CONTAINER-->
+    <div class="container bg-container">
+      <!-- CONTENT -->
+      <!--
+        Only the inner content of the following tag "section" is included
+        within the template, in the section "content"
+      -->
+      <section data-layout-fragment="content" data-th-object="${zamestnanec}">
+        <div class="container-fluid content">
+
+          <!-- CONTENT -->
+          <h1 data-th-text="#{label_show_entity(#{label_zamestnanec})}">Show Zamestnanec</h1>
+
+            <div id="mainEntityFieldSet">
+              <h2 data-th-text="#{label_data_entity(#{label_zamestnanec})}">Zamestnanec data</h2>
+              <ul class="list-unstyled" id="containerFields">
+                  <li id="zamestnanec-jmeno-field" data-z="954714d0">
+            	      <strong data-th-text="#{label_zamestnanec_jmeno}">jmeno</strong>
+                    <span data-th-text="*{{jmeno}}">jmenoValue</span>
+         	        </li>
+                  <li id="zamestnanec-prijmeni-field" data-z="2116532e">
+            	      <strong data-th-text="#{label_zamestnanec_prijmeni}">prijmeni</strong>
+                    <span data-th-text="*{{prijmeni}}">prijmeniValue</span>
+         	        </li>
+                  <li id="zamestnanec-login-field" data-z="61dd810">
+            	      <strong data-th-text="#{label_zamestnanec_login}">login</strong>
+                    <span data-th-text="*{{login}}">loginValue</span>
+         	        </li>
+                  <li id="zamestnanec-hodinova_sazba-field" data-z="d77dae2e">
+            	      <strong data-th-text="#{label_zamestnanec_hodinova_sazba}">hodinova_sazba</strong>
+                    <span data-th-text="*{{hodinova_sazba}}">hodinova_sazbaValue</span>
+         	        </li>
+                  <li id="zamestnanec-pozice-field" data-z="522157ae">
+            	      <strong data-th-text="#{label_zamestnanec_pozice}">pozice</strong>
+                    <span data-th-text="*{{pozice}}">poziceValue</span>
+         	        </li>
+              </ul>
+            </div>
+
+
+          <div class="clearfix">
+            <div class="pull-right">
+             <a id="Zamestnanec_edit" href="edit.html" class="btn btn-primary" data-th-title="#{label_goEdit}" data-th-href="${@linkBuilder.of('ZamestnanecsItemThymeleafController').to('editForm').with('zamestnanec', zamestnanec.id)}" data-th-text="#{label_edit}">Edit</a>
+            </div>
+          </div>
+
+
+          <div class="clearfix">
+            <div class="pull-left">
+              <a id="Zamestnanec_list" href="list.html" class="btn btn-default" data-th-title="#{label_goBack}" data-th-href="${@linkBuilder.of('ZamestnanecsCollectionThymeleafController').to('list')}">
+  	             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+  	             <span data-th-text="#{label_back}">Back</span>
+  	          </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <!-- /CONTENT -->
+  </div>
+  <!-- /CONTAINER -->
+
+  <footer class="container">
+    <!-- Content replaced by layout of the page displayed -->
+  </footer>
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so that the pages load faster -->
+  <!-- JavaScript loaded by layout of the page displayed -->
+  <!--
+       Only the inner content of the following tag "javascript" is included
+       within the template, in the div "javascript"
+      -->
+  <div data-layout-fragment="javascript">
+  </div>
+
+  </body>
+
+</html>

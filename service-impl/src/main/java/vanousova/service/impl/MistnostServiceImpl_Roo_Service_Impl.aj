@@ -100,21 +100,21 @@ privileged aspect MistnostServiceImpl_Roo_Service_Impl {
     /**
      * TODO Auto-generated method documentation
      * 
-     * @param id_mist
+     * @param id
      * @return Mistnost
      */
-    public Mistnost MistnostServiceImpl.findOne(Long id_mist) {
-        return getMistnostRepository().findOne(id_mist);
+    public Mistnost MistnostServiceImpl.findOne(Long id) {
+        return getMistnostRepository().findOne(id);
     }
     
     /**
      * TODO Auto-generated method documentation
      * 
-     * @param id_mist
+     * @param id
      * @return Mistnost
      */
-    public Mistnost MistnostServiceImpl.findOneForUpdate(Long id_mist) {
-        return getMistnostRepository().findOneDetached(id_mist);
+    public Mistnost MistnostServiceImpl.findOneForUpdate(Long id) {
+        return getMistnostRepository().findOneDetached(id);
     }
     
     /**

@@ -78,7 +78,7 @@ privileged aspect MistnostRepositoryImpl_Roo_Jpa_Repository_Impl {
         applyGlobalSearch(globalSearch, query, paths);
         
         // Also, filter by the provided ids
-        query.where(mistnost.id_mist.in(ids));
+        query.where(mistnost.id.in(ids));
         
         AttributeMappingBuilder mapping = buildMapper()
 			.map(NAZEV, mistnost.nazev)
