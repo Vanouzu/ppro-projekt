@@ -6,10 +6,8 @@ package vanousova.application.config.jackson;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.springframework.boot.jackson.JsonComponent;
 import vanousova.application.config.jackson.DomainModelModule;
-import vanousova.application.web.MistnostJsonMixin;
 import vanousova.application.web.ZakaznikJsonMixin;
 import vanousova.application.web.ZamestnanecJsonMixin;
-import vanousova.model.Mistnost;
 import vanousova.model.Zakaznik;
 import vanousova.model.Zamestnanec;
 
@@ -26,7 +24,6 @@ privileged aspect DomainModelModule_Roo_DomainModelModule {
     public DomainModelModule.new() {
         // Mixin registration
         
-        setMixInAnnotation(Mistnost.class, MistnostJsonMixin.class);
         setMixInAnnotation(Zakaznik.class, ZakaznikJsonMixin.class);
         setMixInAnnotation(Zamestnanec.class, ZamestnanecJsonMixin.class);
     }

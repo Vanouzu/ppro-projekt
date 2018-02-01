@@ -43,3 +43,21 @@ finder add --entity ~.Zakaznik --name findByNazev
 service --all
 web mvc controller --entity ~.Zakaznik --responseType THYMELEAF 
 web mvc finder --entity ~.Zakaznik --responseType THYMELEAF 
+// Spring Roo 2.0.0.RC2 [rev 76d128f] log opened at 2018-02-01 16:05:04
+enum type --class model:~.Pozice
+enum constant --name ucetni
+enum constant --name asistent
+enum constant --name lektor
+entity jpa --class model:~.Zamestnanec
+field string --fieldName jmeno
+field string --fieldName prijmeni
+field string --fieldName login
+field number --fieldName hodinova_sazba --type int
+field enum --fieldName pozice --type ~.Pozice --enumType STRING 
+// [failed] repository jpa --all
+repository jpa --entity ~.Zamestnanec --interface repository:~.Zamestnanec
+finder add --entity ~.Zamestnanec --name findById
+finder add --entity ~.Zamestnanec --name findByPrijmeni
+web mvc controller --entity ~.Zamestnanec --responseType THYMELEAF 
+service --all
+web mvc controller --entity ~.Zamestnanec --responseType THYMELEAF 

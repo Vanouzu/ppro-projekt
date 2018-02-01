@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Version;
 import org.springframework.format.annotation.NumberFormat;
+
+import javax.jdo.annotations.Column;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
